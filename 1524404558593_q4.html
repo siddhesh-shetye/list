@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <script>
+        function validateForm() {
+            var name;
+            var length;
+            var i = 0;
+            var count = 0;
+			
+            name = document.getElementById("name").value;
+
+            var lis = document.getElementById("students").getElementsByTagName("li");
+            length = lis.length;
+
+            var x = document.getElementsByTagName("li")[0].textContent;
+
+            var myNodelist = document.getElementsByTagName("li");
+
+            for (i = 0; i < length; i++) {
+                if (name == document.getElementsByTagName("li")[i].textContent) {
+                    myNodelist[i].style.color = "red";
+                    return false;
+                    break;
+                }
+                else {
+                    count = count + 1;
+                }
+            }
+
+            if (count > 0) {
+                var para = document.createElement("li");
+                var node = document.createTextNode(name);
+
+                para.appendChild(node);
+
+                var element = document.getElementById("std");
+                element.appendChild(para);
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="students">
+        <ul id="std">
+            <li id="1">Prajot</li>
+            <li id="2">Amit</li>
+            <li id="3">Abhijet</li>
+        </ul>
+    </div>
+
+    <form name="form" action="" onsubmit="return validateForm()" method="post">
+        <input type="text" id="name" />
+        <input type="submit" />
+    </form>
+</body>
+</html>

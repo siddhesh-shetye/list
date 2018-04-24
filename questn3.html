@@ -1,0 +1,181 @@
+﻿<html>
+<head>
+	<title> ques 3 1420</title>
+	<style>
+		.img {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			border: 2px solid pink;
+		}
+
+		.img1 {
+			width: 500px;
+			height: 500px;
+			margin: 10px;
+			position: absolute;
+			top: 10px;
+			left: 200px;
+			background-color: blue;
+		}
+
+		#one {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+
+		#two {
+			position: absolute;
+			top: 120px;
+			left: 10px;
+		}
+
+		#three {
+			position: absolute;
+			top: 230px;
+			left: 10px;
+		}
+
+		#four {
+			position: absolute;
+			top: 340px;
+			left: 10px;
+		}
+
+		#five {
+			position: absolute;
+			top: 450px;
+			left: 10px;
+		}
+
+		#six {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			position: absolute;
+			top: 10px;
+			left: 800px;
+		}
+
+		#seven {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			position: absolute;
+			top: 120px;
+			left: 800px;
+		}
+
+		#eight {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			position: absolute;
+			top: 230px;
+			left: 800px;
+		}
+
+		#nine {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			position: absolute;
+			top: 340px;
+			left: 800px;
+		}
+
+		#ten {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			position: absolute;
+			top: 450px;
+			left: 800px;
+		}
+
+		#box {
+			width: 1000px;
+			height: 800px;
+			border: 2px solid black;
+			position: relative;
+		}
+
+		body {
+			background: pink;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="box">
+		<img class="img" id="one" src="idiots-1.jpg" onclick="move(event)"></img>
+		<img class="img" id="two" src="idiots-2.jpg" onclick="move(event)"></img>
+		<img class="img" id="three" src="idiots-3.jpg" onclick="move(event)"></img>
+		<img class="img" id="four" src="idiots-4.jpg" onclick="move(event)"></img>
+		<img class="img" id="five" src="idiots-5.jpg" onclick="move(event)"></img>
+
+		<div id="blue">
+			<img class="img1" id="big" onclick="moveright(event)"></img>
+		</div>
+
+		<img class="img2" id="six"></img>
+		<img class="img2" id="seven"></img>
+		<img class="img2" id="eight"></img>
+		<img class="img2" id="nine"></img>
+		<img class="img2" id="ten"></img>
+	</div>
+
+			<script>
+				function move(event) {
+
+					var x = document.getElementById(event.currentTarget.id).src;
+
+					document.getElementById('big').src = x;
+
+					document.getElementById(event.currentTarget.id).src = "";
+				}
+
+				function moveright(event) {
+
+					var x = document.getElementById(event.currentTarget.id).src;
+
+					document.getElementById(event.currentTarget.id).src = "";
+
+					var y1 = document.getElementById('six').src;
+
+					var y2 = document.getElementById('seven').src;
+
+					var y3 = document.getElementById('eight').src;
+
+					var y4 = document.getElementById('nine').src;
+
+					var y5 = document.getElementById('ten').src;
+
+					document.getElementById('six').src = x;
+
+					if (y1 == "") { } else {
+
+						document.getElementById('seven').src = y1;
+					}
+
+					if (y2 == "") { } else {
+
+						document.getElementById('eight').src = y2;
+					}
+
+					if (y3 == "") { } else {
+
+						document.getElementById('nine').src = y3;
+					}
+
+					if (y4 == "") { } else {
+
+						document.getElementById('ten').src = y4;
+					}
+
+				}
+			</script>
+</body>
+</html>
